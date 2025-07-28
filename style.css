@@ -1,0 +1,104 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo general del body */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('/assets/imagen-fondo.png'); /* Tu fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #e9eff4; /* Color de respaldo */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Contenedor principal del formulario */
+.container {
+  background-color: #cfdce9;  /* Azul muy suave */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Título */
+.container h2 {
+  margin-bottom: 1.5rem;
+  color: #34517a;
+  font-size: 1.5rem;
+}
+
+/* Estilo para cada bloque de campo */
+.container div {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* Etiquetas */
+.container label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #34517a;
+  font-size: 0.95rem;
+}
+
+/* Inputs (excepto checkbox y radio) */
+.container input:not([type="radio"]) {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #aabedb;  /* Azul medio como borde */
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+/* Alineaciones */
+.container {
+  text-align: left;
+}
+.container h2 {
+  text-align: center;
+}
+
+/* Botón de registro */
+button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #34517a;  /* Azul oscuro */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.registro-btn button:hover {
+  background-color: #4a6a92; /* Un poco más oscuro */
+}
+
+/* Estilo responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .container h2 {
+    font-size: 1.3rem;
+  }
+
+  .registro-btn button {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+}

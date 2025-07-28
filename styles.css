@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo general del body */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('/assets/imagen-fondo.png'); /* Tu fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #e9eff4; /* Color de respaldo */
+  height: 100vh;
+   display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrado vertical */
+  align-items: center;     /* Centrado horizontal */
+}
+.contenedor-botones {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* espacio entre columnas */
+  margin: 30px auto;
+  max-width: 800px;
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.columna button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 220px;
+}
+
+.columna button:hover {
+  background-color: #357ab8;
+}

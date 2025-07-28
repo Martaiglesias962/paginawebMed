@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h2>Registro</h2>
+
+    <div class="nombre-cont">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombreReg" name="nombre" required />
+    </div>
+
+    <div class="apellido-cont">
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellidoReg" name="apellido" required />
+    </div>
+
+    <div class="email-cont">
+      <label for="email">Email:</label>
+      <input type="email" id="emailReg" name="email" required />
+    </div>
+
+    <div class="fecha-cont">
+      <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+      <input type="date" id="fechaNacimientoReg" name="fecha-nacimiento" required />
+    </div>
+
+    <div class="password-cont">
+      <label for="password">Contraseña:</label>
+      <input type="password" id="passReg" name="password" required />
+    </div>
+
+    <div class="password-confirm-cont">
+      <label for="password-confirm">Confirmar contraseña:</label>
+      <input type="password" id="confirmarPassRef" name="password-confirm" required />
+    </div>
+
+    <div class="rol-cont">
+      <label class="rol-label">¿Eres médico o paciente?</label>
+      <div class="rol-opciones">
+        <label>
+          <input type="radio" name="rol" value="medico" required />
+          Médico
+        </label>
+        <label>
+          <input type="radio" name="rol" value="paciente" />
+          Paciente
+        </label>
+      </div>
+    </div>
+
+
+
+    <div class="registro-btn">
+      <button type="button" id="btnRegister">Registrarse</button>
+    </div>
+    <div class="registro-link">
+      <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
+    </div>
+    <div class="estado">
+      <p id="estado"></p>
+    </div>
+    <script type="module" src="registro.js"></script>
+</body>
+
+</html>
