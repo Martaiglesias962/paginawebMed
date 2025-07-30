@@ -8,11 +8,11 @@
 /* Estilo general del body */
 body {
   font-family: Arial, sans-serif;
-  background-image: url('/assets/imagen-fondo.png'); /* Tu fondo */
+  background-image: url('../assets/imagen-fondo.png'); /* Tu fondo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #e9eff4; /* Color de respaldo */
+  background-color: var(--color-fondo); /* CoWlor de respaldo */
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -22,7 +22,7 @@ body {
 
 /* Contenedor principal del formulario */
 .container {
-  background-color: #cfdce9;  /* Azul muy suave */
+  background-color: var(--color-container);  /* Azul muy suave */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -32,9 +32,9 @@ body {
 }
 
 /* Título */
-.container h2 {
+.container h1 {
   margin-bottom: 1.5rem;
-  color: #34517a;
+  color: var(--color-texto);
   font-size: 1.5rem;
 }
 
@@ -48,7 +48,7 @@ body {
 .container label {
   display: block;
   margin-bottom: 0.4rem;
-  color: #34517a;
+  color: var(--color-texto);
   font-size: 0.95rem;
 }
 
@@ -56,7 +56,7 @@ body {
 .container input:not([type="radio"]) {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #aabedb;  /* Azul medio como borde */
+  border: 1px solid var(--color-borde-input);  /* Azul medio como borde */
   border-radius: 8px;
   font-size: 1rem;
   background-color: white;
@@ -66,15 +66,19 @@ body {
 .container {
   text-align: left;
 }
-.container h2 {
+.container h1 {
   text-align: center;
+}
+
+.container p{
+  color: var(--color-texto);
 }
 
 /* Botón de registro */
 button {
   width: 100%;
   padding: 0.8rem;
-  background-color: #34517a;  /* Azul oscuro */
+  background-color: var(--color-boton);  /* Azul oscuro */
   color: white;
   border: none;
   border-radius: 8px;
@@ -84,7 +88,7 @@ button {
 }
 
 .registro-btn button:hover {
-  background-color: #4a6a92; /* Un poco más oscuro */
+  background-color: var(color-boton-hover); /* Un poco más oscuro */
 }
 
 /* Estilo responsive */

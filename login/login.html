@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Inicio Sesión</title>
+</head>
+
+<body>
+    <header>
+        <!-- Puedes dejarlo vacío o poner logo / título si quieres -->
+    </header>
+
+    <main class="container">
+        <h1>Inicio de Sesión</h1>
+
+        <div class="email-cont">
+            <label for="emailLogin">Email:</label>
+            <input type="email" id="emailLogin" name="email" required />
+        </div>
+        <div class="password-cont">
+            <label for="passLogin">Contraseña:</label>
+            <input type="password" id="passLogin" name="password" required />
+        </div>
+        <div class="login-btn">
+            <button type="button" id="btnLogin">Iniciar Sesión</button>
+        </div>
+        <div class="registro-link">
+            <p>¿No tienes una cuenta? <a href="../registro/registro.html">Regístrate</a></p>
+        </div>
+        <div class="estado">
+            <p id="estado"></p>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Información de contacto, derechos de autor, etc. -->
+    </footer>
+
+    <script type="module" src="login.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    setPersistence,
+    browserSessionPersistence
+}
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // Configuración Firebase
@@ -33,8 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
+            await setPersistence(auth, browserSessionPersistence)
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
+
 
             // 🔎 Buscar en pacientes
             const docPacienteRef = doc(db, "pacientes", user.uid);
@@ -43,7 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (docPacienteSnap.exists()) {
                 estado.textContent = "Inicio de sesión exitoso como paciente.";
                 estado.style.color = "green";
-                window.location.href = "principal-paciente.html";
+                localStorage.setItem("uid", user);
+                window.location.href = "../paciente/principal-paciente.html";
                 return;
             }
 
@@ -54,7 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (docMedicoSnap.exists()) {
                 estado.textContent = "Inicio de sesión exitoso como profesional.";
                 estado.style.color = "green";
-                window.location.href = "principal-medicos.html";
+                localStorage.setItem("uid", user);
+                window.location.href = "../medico/principal-medicos.html";
                 return;
             }
 

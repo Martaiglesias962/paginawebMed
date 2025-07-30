@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro</title>
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="registro.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Registro</h1>
+
+    <div class="nombre-cont">
+      <label for="nombreReg">Nombre:</label>
+      <input type="text" id="nombreReg" name="nombre" required />
+    </div>
+
+    <div class="apellido-cont">
+      <label for="apellidoReg">Apellido:</label>
+      <input type="text" id="apellidoReg" name="apellido" required />
+    </div>
+
+    <div class="email-cont">
+      <label for="emailReg">Email:</label>
+      <input type="email" id="emailReg" name="email" required />
+    </div>
+
+    <div class="fecha-cont">
+      <label for="fechaNacimientoReg">Fecha de nacimiento:</label>
+      <input type="date" id="fechaNacimientoReg" name="fecha-nacimiento" required />
+    </div>
+
+
+
+
+    <div class="password-cont">
+      <label for="passReg">Contraseña:</label>
+      <input type="password" id="passReg" name="password" required />
+    </div>
+
+    <div class="password-confirm-cont">
+      <label for="confirmarPassRef">Confirmar contraseña:</label>
+      <input type="password" id="confirmarPassRef" name="password-confirm" required />
+    </div>
+
+    <div class="sexo-cont">
+      <fielset>
+        <label class="sexo-label"><strong>¿Cuál es tu sexo?</strong></strong></label>
+        <div class="sexo-opciones">
+          <label>
+            <input type="radio" name="sexo" value="hombre" required />
+            Hombre
+          </label>
+          <label>
+            <input type="radio" name="sexo" value="mujer" />
+            Mujer
+          </label>
+          <label>
+            <input type="radio" name="sexo" value="otro" />
+            Otro / Prefiero no decirlo
+          </label>
+        </div>
+      </fielset>
+    </div>
+
+    <div class="rol-cont">
+      <fieldsel>
+        <label class="rol-label"><strong>¿Eres médico o paciente?</strong></label>
+        <div class="rol-opciones">
+          <label>
+            <input type="radio" name="rol" value="medico" required />
+            Médico
+          </label>
+          <label>
+            <input type="radio" name="rol" value="paciente" />
+            Paciente
+          </label>
+        </div>
+      </fieldsel>
+    </div>
+
+
+
+    <div class="registro-btn">
+      <button type="button" id="btnRegister">Registrarse</button>
+    </div>
+    <div class="registro-link">
+      <p>¿Ya tienes una cuenta? <a href="../login/login.html">Inicia sesión</a></p>
+    </div>
+    <div class="estado">
+      <p id="estado"></p>
+    </div>
+  </main>
+  <script type="module" src="registro.js"></script>
+</body>
+
+</html>

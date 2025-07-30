@@ -31,9 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = document.getElementById("passReg").value.trim();
         const confirmarPass = document.getElementById("confirmarPassRef").value.trim();
         const rolRadio = document.querySelector('input[name="rol"]:checked');
-
+        const sexoInput = document.querySelector('input[name=sexo]:checked');
+        const sexo = sexoInput ? sexoInput.value.trim() : "";
         // Validaciones
-        if (!nombre || !apellido || !email || !fechaNacimiento || !password || !confirmarPass || !rolRadio) {
+        if (!nombre || !apellido || !email || !fechaNacimiento || !password || !confirmarPass || !rolRadio || !sexo) {
             estado.textContent = "Por favor, completa todos los campos.";
             estado.style.color = "red";
             return;
@@ -74,19 +75,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 email,
                 fechaNacimiento,
                 rol,
-                uid
+                uid,
+                sexo
             };
 
             await setDoc(doc(db, coleccion, uid), datos);
 
             estado.textContent = `Registro exitoso. ¡Bienvenido/a ${nombre}!`;
             estado.style.color = "green";
-            if(rol === "paciente") {
+            if (rol === "paciente") {
                 // Redirigir a página de paciente
-                window.location.href = "principal-paciente.html";
+                window.location.href = "../paciente/principal-paciente.html";
             } else {
                 // Redirigir a página de profesional
-                window.location.href = "principal-medico.html";
+                window.location.href = "../medico/principal-medicos.html";
             }
 
         } catch (error) {
