@@ -1,20 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
     <meta charset="UTF-8" />
-    <title>Pagina principal Medicos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel principal del médico</title>
+    <link rel="stylesheet" href="principal-medicos.css" />
+    <link rel="stylesheet" href="../general/variables.css" />
 </head>
+
 <body>
-    <h1>Bienvenido a la página principal de médicos</h1>
-    <p>Aquí puedes acceder a las funcionalidades específicas para médicos.</p>
-    <nav>
-        <ul>
-            <li><a href="registro.html">Registro</a></li>
-            <li><a href="login.html">Iniciar sesión</a></li>
-        </ul>
-    </nav>
-    <footer>
-        <p>&copy; 2023 Tu Empresa. Todos los derechos reservados.</p>
-    </footer>
+
+    <main class="container">
+        <h1> Panel del Profesional</h1>
+        <!-- Info del médico -->
+        <section class="perfil-medico">
+            <div id="contImagen">
+                <img src="../assets/foto-medico.png" id="imgPerfil" alt="Foto de perfil" />
+                <div id="campoImagen" style="display: none;">
+                    <input type="file" id="fotoPerfil" accept="image/*">
+                </div>
+
+            </div>
+
+            <div class="info">
+                <h2 id="nombreDoct">Nombre:</h2>
+                <p id="espDoc"><strong>Especialidad:</strong></p>
+
+                <div id="campoEsp" style="display: none;">
+                    <label for="inputEsp">Especialidad:</label>
+                    <input type="text" id="inputEsp" />
+                </div>
+
+                <p id="emailDoc"><strong>Email:</strong></p>
+                <div id="campoEmail" style="display: none;">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" id="inputEmail" />
+                </div>
+
+                <p id="numCole"><strong>Número de colegiado:</strong></p>
+                <div id="campoCol" style="display: none;">
+                    <label for="inputCol">Numero de colegiado</label>
+                    <input type="text" id="inputCol" />
+                </div>
+                <button class="boton" id="btnActPerfil">Actualizar perfil</button>
+            </div>
+        </section>
+
+        <section class="acciones">
+            <h2>🩺 Funcionalidades disponibles</h2>
+            <div class="grid-funciones">
+                <div class="tarjeta-funcion">
+                    <h3>Añadir paciente</h3>
+                    <p>Registra un nuevo paciente en el sistema.</p>
+                    <button class="boton" id="btnAnadirPac">Añadir paciente</button>
+                </div>
+
+                <div class="tarjeta-funcion">
+                    <h3>Ver pacientes</h3>
+                    <p>Consulta y gestiona el historial de tus pacientes.</p>
+                    <button class="boton" id = "btnVerPac">Ver pacientes</button>
+                </div>
+
+                <div class="tarjeta-funcion">
+                    <h3>Ver mensajes</h3>
+                    <p>Consulta los mensajes enviados por tus pacientes.</p>
+                    <button class="boton" id = "btnmensajes">Ver mensajes</button>
+                </div>
+
+                <div class="tarjeta-funcion">
+                    <h3>Ver citas</h3>
+                    <p>Consultar las citas agendadas con pacientes.</p>
+                    <button class="boton" id = "btnCitas">Agenda</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script type="module" src="principal-medicos.js"></script>
 </body>
+
 </html>

@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const estPeso = document.getElementById("estPeso");
         if (pesoInvalido(peso)) {
             estPeso.textContent = "*introduce un peso válido";
-            estPeso.style.color = "red";
+            estPeso.style.color = "#b00020";
             datosValidos = false;
         } else {
             estPeso.textContent = "";
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (alturaInvalida(altura)) {
 
             esAltura.textContent = "*introduce una altura válida";
-            esAltura.style.color = "red";
+            esAltura.style.color = "#b00020";
             datosValidos = false;
 
         } else {
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const estFum = document.getElementById("estFum");
         if (fumador === "") {
             estFum.textContent = "*Indica si eres fumador o no.";
-            estFum.style.color = "red";
+            estFum.style.color = "#b00020";
             datosValidos = false;
         }
         if (datosValidos === false) {

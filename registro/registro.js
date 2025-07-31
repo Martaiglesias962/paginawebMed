@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { Usuario } from "../general/modeloUsuario.js"
+import { Usuario , Medico} from "../general/modeloUsuario.js"
 // Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyBB5zHSFim0ZFEhvJDiiH7ShRfr9gCXrsU",
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const estado = document.getElementById("estado");
 
     btnRegister.addEventListener("click", async () => {
+        event.preventDefault();
         // Leer valores al hacer clic
         const nombre = document.getElementById("nombreReg").value.trim();
         const apellido = document.getElementById("apellidoReg").value.trim();
@@ -65,20 +66,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             // Crear usuario en Firebase Auth
+            console.log("Intentando registrar usuario...");
             const cred = await createUserWithEmailAndPassword(auth, email, password);
             const uid = cred.user.uid;
 
             // Guardar datos en Firestore
-            const nuevoUsuario = new Usuario({ nombre, apellido, email, fechaNacimiento, rol, uid, sexo });
 
-            await setDoc(doc(db, coleccion, uid), nuevoUsuario.toPlainObject());
+            
 
-            estado.textContent = `Registro exitoso. ¡Bienvenido/a ${nombre}!`;
-            estado.style.color = "green";
+           
             if (rol === "paciente") {
+                const nuevoUsuario = new Usuario({ nombre, apellido, email, fechaNacimiento, rol, uid, sexo });
+
+                await setDoc(doc(db, coleccion, uid), nuevoUsuario.toPlainObject());
                 // Redirigir a página de paciente
                 window.location.href = "../paciente/principal-paciente.html";
             } else {
+                const nuevoUsuario = new Medico({ nombre, apellido, email, fechaNacimiento, rol, uid, sexo });
+
+                await setDoc(doc(db, coleccion, uid), nuevoUsuario.toPlainObject());
                 // Redirigir a página de profesional
                 window.location.href = "../medico/principal-medicos.html";
             }
