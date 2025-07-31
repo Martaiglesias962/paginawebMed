@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
+import { Usuario } from "../general/modeloUsuario.js"
 // Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyBB5zHSFim0ZFEhvJDiiH7ShRfr9gCXrsU",
@@ -69,17 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const uid = cred.user.uid;
 
             // Guardar datos en Firestore
-            const datos = {
-                nombre,
-                apellido,
-                email,
-                fechaNacimiento,
-                rol,
-                uid,
-                sexo
-            };
+            const nuevoUsuario = new Usuario({ nombre, apellido, email, fechaNacimiento, rol, uid, sexo });
 
-            await setDoc(doc(db, coleccion, uid), datos);
+            await setDoc(doc(db, coleccion, uid), nuevoUsuario.toPlainObject());
 
             estado.textContent = `Registro exitoso. ¡Bienvenido/a ${nombre}!`;
             estado.style.color = "green";

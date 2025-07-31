@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnLogin = document.getElementById("btnLogin");
     const estado = document.getElementById("estado");
 
+
     btnLogin.addEventListener("click", async () => {
         const email = document.getElementById("emailLogin").value.trim();
         const password = document.getElementById("passLogin").value.trim();
@@ -90,4 +91,13 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error(error);
         }
     });
+    function manejarEnter(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            btnLogin.click();
+        }
+    }
+    email.addEventListener("keydown", manejarEnter);
+    password.addEventListener("keydown", manejarEnter);
+
 });

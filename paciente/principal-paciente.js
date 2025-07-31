@@ -24,6 +24,9 @@ const eventsTimer = ["mousemove", "keydown", "click", "scroll"];
 const titulo = document.getElementById("titulo");
 const estado = document.getElementById("estado");
 onAuthStateChanged(auth, async (user) => {
+    const titulo = document.getElementById("titulo");
+    const estado = document.getElementById("estado");
+     const contenido = document.getElementById("contenido");
     if (user) {
         console.log("Usuario logueado:", user.uid);
 
@@ -41,7 +44,7 @@ onAuthStateChanged(auth, async (user) => {
                 // Mostrar los datos del usuario (puedes adaptarlo según tu estructura)
                 titulo.textContent = `Bienvenido, ${data.nombre || "usuario"}`;
             }
-
+              contenido.style.display = "block";
         } else {
             estado.textContent = "El usuario no tiene guardados datos.";
         }
@@ -59,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnMensajes = document.getElementById("btnMensajes");
     const btnEjercicios = document.getElementById("btnEjercicios")
     btnDatos.addEventListener("click", () => {
-        window.location.href = "paginas/cuestionario.html"
+        window.location.href = "paginas/datosMedicos/cuestionario.html"
     });
     btnRecetas.addEventListener("click", () => {
         window.location.href = "paginas/recetas.html"

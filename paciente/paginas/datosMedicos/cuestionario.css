@@ -1,0 +1,184 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Estilo general del body */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../../../assets/imagen-fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+}
+
+/* Área principal */
+main {
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Títulos */
+h1 {
+    color: var(--color-texto);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    color: var(--color-texto);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.barra-superior {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    padding: 1rem;
+    text-align: left;
+    z-index: 999;
+}
+
+
+/* Contenedor de cada bloque */
+.container {
+    background-color: var(--color-container);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: left;
+}
+
+/* Cada bloque de campo */
+.container div {
+    margin-bottom: 1rem;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--color-texto);
+    font-size: 0.95rem;
+}
+
+/* Inputs y textareas */
+input:not([type="radio"]),
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-borde-input);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+/* Radios agrupados */
+.sexo-opciones,
+.fumar-opciones {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.sexo-opciones label,
+.fumar-opciones label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+}
+
+/* Fieldsets */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+}
+
+/* Botón general */
+.boton {
+    width: 70%;
+    padding: 0.8rem;
+    background-color: var(--color-boton);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+
+.boton:hover {
+    background-color: var(--color-boton-hover);
+}
+
+/* Botón general */
+.boton-barra {
+    padding: 0.8rem;
+    background-color: var(--color-boton);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+
+.boton-barra:hover {
+    background-color: var(--color-boton-hover);
+}
+
+/* Contenedor del botón de guardar */
+.button-guardar {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Botón menú arriba a la izquierda */
+.button-menu {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1,
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .boton {
+        font-size: 0.95rem;
+    }
+}

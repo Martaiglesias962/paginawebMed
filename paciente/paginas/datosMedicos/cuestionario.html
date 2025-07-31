@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Cuestionario Médico</title>
+    <link rel="stylesheet" href="../../../general/variables.css" />
+    <link rel="stylesheet" href="cuestionario.css" />
+</head>
+
+<body>
+    <header class="barra-superior">
+        <button class="boton-barra" type="button" id="btnMenuPrincipal">⟵ Menú principal</button>
+    </header>
+    <main>
+        <!-- Botón de menú principal -->
+
+        <div id="datos-personales" class="container">
+            <!-- Título principal -->
+            <h1>Rellene estos datos para poder darle una atención más especializada</h1>
+
+            <!-- Sección de datos personales -->
+            <h2>Datos personales</h2>
+
+            <div class="nombre-cont">
+                <label for="CuestNombre">Nombre:</label>
+                <input type="text" id="CuestNombre" name="nombre" required />
+            </div>
+
+            <div class="apellido-cont">
+                <label for="CuestApellido">Apellidos:</label>
+                <input type="text" id="CuestApellido" name="apellido" required />
+            </div>
+
+            <div class="fecha-cont">
+                <label for="fechaNacimientoReg">Fecha de nacimiento:</label>
+                <input type="date" id="fechaNacimientoReg" name="fecha-nacimiento" required />
+            </div>
+
+            <div class="sexo-cont">
+                <fieldset>
+                    <legend>¿Cuál es tu sexo?</legend>
+                    <div class="sexo-opciones">
+                        <label><input type="radio" name="sexo" value="hombre" required /> Hombre</label>
+                        <label><input type="radio" name="sexo" value="mujer" /> Mujer</label>
+                        <label><input type="radio" name="sexo" value="otro" /> Otro / Prefiero no decirlo</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- Sección de datos físicos -->
+            <h2>Datos físicos</h2>
+
+            <div class="peso-cont">
+                <label for="pesoReg">Peso (kg):</label>
+                <input type="number" id="pesoReg" name="peso" required />
+                <p id = "estPeso"></p>
+            </div>
+
+            <div class="altura-cont">
+                <label for="alturaReg">Altura (cm):</label>
+                <input type="number" id="alturaReg" name="altura" required />
+                <p id = "estAltura"></p>
+            </div>
+
+            <div class="alergias-cont">
+                <label for="alergiasReg">Alergias conocidas:</label>
+                <textarea id="alergiasReg" name="alergias" rows="4" placeholder="Ej: Penicilina, marisco, polen..."
+                    required></textarea>
+            </div>
+
+            <div class="medicamentos-cont">
+                <label for="medicamentosReg">Medicamentos:</label>
+                <textarea id="medicamentosReg" name="medicamentos" rows="4"
+                    placeholder="Ej: Sertralina, Sintron, hierro..." required></textarea>
+            </div>
+
+            <div class="enfermedades-cont">
+                <label for="enfermedadesReg">Enfermedades:</label>
+                <textarea id="enfermedadesReg" name="enfermedades" rows="4"
+                    placeholder="Ej: Depresión, anemia, diabetes, asma" required></textarea>
+            </div>
+
+            <fieldset>
+                <legend>¿Es usted fumador?</legend>
+                <div class="fumar-opciones">
+                    <label><input type="radio" name="fumador" value="fuma-no" required /> No</label>
+                    <label><input type="radio" name="fumador" value="fuma-ocasionalmente" /> Ocasionalmente</label>
+                    <label><input type="radio" name="fumador" value="fuma-habitualmente" /> Habitualmente</label>
+                    <label><input type="radio" name="fumador" value="exfumador" /> Exfumador</label>
+                    <p id = "estFum"></p>
+                </div>
+                
+            </fieldset>
+
+
+            <!-- Botón de guardar -->
+            <div class="button-guardar">
+                <button class="boton" type="button" id="btnGuardar">Guardar datos</button>
+            </div>
+            <p id="estado"></p>
+        </div>
+
+    </main>
+
+    <script type="module" src="cuestionario.js"></script>
+</body>
+
+</html>
